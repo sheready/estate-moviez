@@ -34,43 +34,44 @@ const DisplayMovies = () => {
     }
 
     useEffect(() => {
-    searchMovies("Batman");
+        searchMovies("Batman");
     }, []);
 
 
     if (error) {
-    return <div> <p>Error: {error.message}</p> </div>
+        return <div> <p>Error: {error.message}</p> </div>
     } else if (!isLoaded){
-    return <div> <p className='loading'> Loading ...</p> </div>
+            return <div> <p className='loading'> Loading ...</p> </div>
     }else{
-    return (
-        <div className='app'>
-            <h1>Estate Moviez</h1>
-            <div className='search'>
+        return (
+            <div className='app'>
+                <h1>Estate Moviez</h1>
+                <div className='search'>
 
-            <input placeholder='Search for movies'
-                value={searchTitle}
-                onChange={(e) => setSearchTitle(e.target.value)}>
-            </input>
+                <input placeholder='Search for movies'
+                    value={searchTitle}
+                    onChange={(e) => setSearchTitle(e.target.value)}>
+                </input>
 
-            <img src={searchIcon}
-                alt="search"
-                onClick={() => searchMovies(searchTitle)}
-            />
+                <img src={searchIcon}
+                    alt="search"
+                    onClick={() => searchMovies(searchTitle)}
+                />
+                </div>
+                {movies.results?.length > 0 ? (
+                    <div className="moviecontainer">
+                    {movies.results.map((movie) => (
+                        <MovieCard movie={movie} />
+                    ))}
+                    </div>
+                    ) : (
+                    <div className='empty'> 
+                        <h2>No movies found</h2>
+                    </div>
+                )}
             </div>
-            {movies.results?.length > 0 ? (
-                <div className="moviecontainer">
-                {movies.results.map((movie) => (
-                    <MovieCard movie={movie} />
-                ))}
-                </div>
-                ) : (
-                <div className='empty'> 
-                    <h2>No movies found</h2>
-                </div>
-            )}
-        </div>
-    )};
+        )
+    };
 
 }
 
