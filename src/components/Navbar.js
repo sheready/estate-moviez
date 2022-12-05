@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./Home";
 import { Menu } from "antd";
+import {HomeOutlined, VideoCameraOutlined} from '@ant-design/icons';
 
 
 const Navbar = () => {
@@ -13,10 +14,10 @@ const Navbar = () => {
                 }}
                 mode="inline"
                 items={[
-                    {label: "Home", key:"home"},
+                    {label: "Home", key:"home",icon:<HomeOutlined/>},
                     {label: "Movies", key:"movies", children:[
-                        {label: "All-Movies", key:"all-movies"},
-                        {label: "Search-Movies", key:"searched-movies"}
+                        {label: "All-Movies", key:"all-movies", icon: <VideoCameraOutlined />},
+                        {label: "Search-Movies", key:"searched-movies", icon: <VideoCameraOutlined />}
                     ]}
                 ]}
                 ></Menu>

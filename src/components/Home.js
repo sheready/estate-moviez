@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieCard from './MovieCard';
 import { useState, useEffect } from 'react';
+import {LoadingOutlined} from '@ant-design/icons';
 
 const options = {
     method: 'GET',
@@ -36,7 +37,7 @@ const Home = () => {
         if (error) {
             return <div> <p>Error: {error.message}</p> </div>
         } else if (!isLoaded){
-                return <div> <p className='loading'> Loading ...</p> </div>
+                return <div> <LoadingOutlined></LoadingOutlined> </div>
         } else {
             return (
                 <div className='home'>

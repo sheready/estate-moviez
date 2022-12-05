@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import searchIcon from './search.svg';
 import MovieCard from './MovieCard';
+import {LoadingOutlined} from '@ant-design/icons';
 
 
 
@@ -41,7 +42,7 @@ const DisplayMovies = () => {
     if (error) {
         return <div> <p>Error: {error.message}</p> </div>
     } else if (!isLoaded){
-            return <div> <p className='loading'> Loading ...</p> </div>
+            return <div> <LoadingOutlined></LoadingOutlined> </div>
     }else{
         return (
             <div className='app'>
