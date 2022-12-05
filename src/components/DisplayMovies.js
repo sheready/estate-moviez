@@ -1,4 +1,4 @@
-import './App.css';
+
 import { useState, useEffect } from 'react';
 import searchIcon from './search.svg';
 import MovieCard from './MovieCard';

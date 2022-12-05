@@ -1,7 +1,8 @@
 import './App.css';
 import { Route, Routes, Link } from "react-router-dom";
-import DisplayMovies  from './DisplayMovies';
-import Home  from './Home';
+import DisplayMovies  from './components/DisplayMovies';
+import Home  from './components/Home';
+import Navbar from './components/Navbar';
 
 
 
@@ -13,6 +14,7 @@ const App = () => {
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/movies">Movies</Link></li>
+          <Navbar/>
         </ul>
       </nav>
    
