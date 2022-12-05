@@ -1,27 +1,28 @@
 import React from "react";
-import Home from "./Home";
+import { useNavigate } from "react-router-dom";
 import { Menu } from "antd";
 import {HomeOutlined, VideoCameraOutlined} from '@ant-design/icons';
 
 
 const Navbar = () => {
+    const navigate = useNavigate()
     return (
         <div>
-            <header>
-                <Menu 
-                style={{
-                    width: 256,
-                }}
-                mode="inline"
-                items={[
-                    {label: "Home", key:"home",icon:<HomeOutlined/>},
-                    {label: "Movies", key:"movies", children:[
-                        {label: "All-Movies", key:"all-movies", icon: <VideoCameraOutlined />},
-                        {label: "Search-Movies", key:"searched-movies", icon: <VideoCameraOutlined />}
-                    ]}
+            <Menu 
+            style={{
+                width: 256,
+            }}
+            onClick={({key}) => {
+                navigate(key);
+            }}
+            mode="inline"
+            items={[
+                {label: "Home", key:"/",icon:<HomeOutlined/>},
+                {label: "Movies", key:"movies", children:[
+                    {label: "Search-Movies", key:"/movies", icon: <VideoCameraOutlined />}
                 ]}
-                ></Menu>
-            </header>
+            ]}
+            ></Menu>
         </div>
     )
 

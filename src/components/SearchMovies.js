@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import searchIcon from './search.svg';
+import { Input } from 'antd';
 import MovieCard from './MovieCard';
 import {LoadingOutlined} from '@ant-design/icons';
 
@@ -14,7 +14,9 @@ const options = {
     }
 };
 
-const DisplayMovies = () => {
+const { Search } = Input;
+
+const SearchMovies = () => {
     const [movies, setMovies] = useState([]);
     const [searchTitle, setSearchTitle] = useState('');
     const [isLoaded, setIsLoaded] = useState(false);
@@ -47,18 +49,18 @@ const DisplayMovies = () => {
         return (
             <div className='app'>
                 <h1>Estate Moviez</h1>
-                <div className='search'>
 
-                <input placeholder='Search for movies'
+                <Search
+                    placeholder="input movie title"
+                    allowClear
                     value={searchTitle}
-                    onChange={(e) => setSearchTitle(e.target.value)}>
-                </input>
-
-                <img src={searchIcon}
-                    alt="search"
+                    onChange={(e) => setSearchTitle(e.target.value)}
                     onClick={() => searchMovies(searchTitle)}
+                    style={{
+                        width: 200,
+                    }}
                 />
-                </div>
+
                 {movies.results?.length > 0 ? (
                     <div className="moviecontainer">
                     {movies.results.map((movie) => (
@@ -76,5 +78,5 @@ const DisplayMovies = () => {
 
 }
 
-export default DisplayMovies;
+export default SearchMovies;
 

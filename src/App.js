@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Routes, Link } from "react-router-dom";
-import DisplayMovies  from './components/DisplayMovies';
+import SearchMovies  from './components/SearchMovies';
 import Home  from './components/Home';
 import Navbar from './components/Navbar';
 
@@ -10,17 +10,10 @@ import Navbar from './components/Navbar';
 const App = () => {
   return (
     <>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/movies">Movies</Link></li>
-          <Navbar/>
-        </ul>
-      </nav>
-   
+      <Navbar/>
 
       <Routes>
-        <Route path="/movies" element={<DisplayMovies />} />
+        <Route path="/movies" element={<SearchMovies />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </>
