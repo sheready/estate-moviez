@@ -9,15 +9,21 @@ import Navbar from './components/Navbar';
 
 const App = () => {
   return (
-    <>
-      <Navbar/>
-
+    <div style={{display: "flex", flexDirection: "row"}}>
+      <Navbar />
+      <Content />
+    </div>
+  )  
+}
+const Content = () => {
+  return(
+    <div>
       <Routes>
         <Route path="/movies" element={<SearchMovies />} />
         <Route path="/" element={<Home />} />
       </Routes>
-    </>
-  )  
+    </div>
+  )
 }
 
 export default App;
