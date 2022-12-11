@@ -1,10 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import { Input } from 'antd';
 import MovieCard from './MovieCard';
 import {LoadingOutlined} from '@ant-design/icons';
-
-
 
 const options = {
     method: 'GET',
@@ -48,7 +45,7 @@ const SearchMovies = () => {
     }else{
         return (
             <div className='app'>
-                <h1>Estate Moviez</h1>
+                <h1  id="header">Estate Moviez</h1>
 
                 <Search
                     placeholder="input movie title"
@@ -57,7 +54,8 @@ const SearchMovies = () => {
                     onChange={(e) => setSearchTitle(e.target.value)}
                     onClick={() => searchMovies(searchTitle)}
                     style={{
-                        width: 200,
+                        width: 500,
+                        marginLeft: "2%"
                     }}
                 />
 

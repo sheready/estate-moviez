@@ -41,7 +41,7 @@ const Home = () => {
         } else {
             return (
                 <div className='home'>
-                    <h1>Estate Moviez</h1>
+                    <h1 id="header">Estate Moviez</h1>
 
                     {movies.results?.length > 0? (
                         <div className="moviecontainer">

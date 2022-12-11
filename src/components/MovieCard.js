@@ -17,8 +17,13 @@ const MovieCard = ({movie : {id, primaryImage, titleType, titleText}}) => (
             style={{
             width: 340,
             }}
-            cover={primaryImage !== null ? <img src={primaryImage.url !== 'null' ? primaryImage.url : 'https://m.media-amazon.com/images/M/MV5BMDczNTEzZWEtMmI0YS00YjE1LTlmZmQtOWQzYmQyMGE3YWY4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg'}  
-            alt={titleType.text} /> : <img src={image.url}/>}
+            cover={
+                primaryImage !== null ? 
+                <img src={primaryImage.url !== 'null' ? 
+                primaryImage.url : 'https://m.media-amazon.com/images/M/MV5BMDczNTEzZWEtMmI0YS00YjE1LTlmZmQtOWQzYmQyMGE3YWY4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg'}  
+                alt={titleType.text} /> : <img src={image.url}
+                />
+            }
         >
             <Meta title={titleText.text} description={titleType.text}/>
         </Card>

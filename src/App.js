@@ -1,11 +1,8 @@
 import './App.css';
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import SearchMovies  from './components/SearchMovies';
 import Home  from './components/Home';
 import Navbar from './components/Navbar';
-
-
-
 
 const App = () => {
   return (

@@ -11,6 +11,8 @@ const Navbar = () => {
             <Menu 
             style={{
                 width: 256,
+                height: "100vh",
+                backgroundColor: "#d0efff",
             }}
             onClick={({key}) => {
                 navigate(key);
